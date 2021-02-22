@@ -74,14 +74,21 @@ public class HelloServlet extends HttpServlet {
             case "fr":
                 msg = "Bonjour, ";
                 break;
+            case "es":
+                msg = "Holla, ";
+                break;
         }
         
         String nome = request.getParameter("nome");
+        String sobrenome = request.getParameter("sobrenome");
 
-        if(nome==null)
+        if(nome==null || nome.trim().equals(""))
             nome = "Fulano";
         
-        msg = msg+nome+"!";
+        if(sobrenome==null || sobrenome.trim().equals(""))
+            sobrenome = "Da Silva";
+        
+        msg = msg+nome+" "+sobrenome+"!";
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
@@ -128,14 +135,21 @@ public class HelloServlet extends HttpServlet {
             case "de":
                 msg = "Hallo, ";
                 break;
+            case "es":
+                msg = "Holla, ";
+                break;
         }
         
         String nome = request.getParameter("nome");
+        String sobrenome = request.getParameter("sobrenome");
 
-        if(nome==null)
+        if(nome==null || nome.trim().equals(""))
             nome = "Fulano";
         
-        msg = msg+nome+"!";
+        if(sobrenome==null || sobrenome.trim().equals(""))
+            sobrenome = "Da Silva";
+
+        msg = msg+nome+" "+sobrenome+"!";
 
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {

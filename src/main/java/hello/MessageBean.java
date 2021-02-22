@@ -17,12 +17,22 @@ import java.io.Serializable;
 public class MessageBean implements Serializable {
      
     private String msg;
+    private String nome;
+    private String sobrenome;
         
     public MessageBean() {
     }
     
     public String getMsg() {
         return msg;
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+    
+    public String getSobrenome() {
+        return sobrenome;
     }
     
     public void setMsg(String value) {
@@ -40,6 +50,21 @@ public class MessageBean implements Serializable {
             case "fr":
                 msg = "Bonjour";
                 break;
+            case "es":
+                msg = "Holla";
+                break;
         }
+    }
+    
+    public void setNome(String value) {
+        if(value==null || value.trim().equals(""))
+            value = "Fulano";
+        nome = value;
+    }
+    
+    public void setSobrenome(String value) {
+        if(value==null || value.trim().equals(""))
+            value = "Da Silva";
+        sobrenome = value;
     }
 }

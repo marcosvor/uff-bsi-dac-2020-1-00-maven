@@ -17,6 +17,12 @@
         <h1>SayHello.jsp</h1>
         <% String lang = request.getParameter("lang"); %>
         <jsp:setProperty name="myBean" property="msg" value="<%=lang%>"/>
-        <jsp:getProperty name="myBean" property="msg"/>, <%=request.getParameter("nome")%>!
+        <% String nome = request.getParameter("nome"); %>
+        <jsp:setProperty name="myBean" property="nome" value="<%=nome%>"/>
+        <% String sobrenome = request.getParameter("sobrenome"); %>
+        <jsp:setProperty name="myBean" property="sobrenome" value="<%=sobrenome%>"/>
+        <jsp:getProperty name="myBean" property="msg"/>, 
+        <jsp:getProperty name="myBean" property="nome"/> 
+        <jsp:getProperty name="myBean" property="sobrenome"/>!
     </body>
 </html>
